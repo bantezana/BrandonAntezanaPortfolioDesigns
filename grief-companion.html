@@ -138,6 +138,52 @@
         </section>
 
         <section class="content-section">
+            <span class="wireframe-tag">Unrefined · Exploratory</span>
+            <h2>Early Process: Sketching the Flow</h2>
+
+            <p>Before any screen was polished, I mapped out the core flows in low-fidelity wireframes — mostly gray boxes, placeholder copy, and rough hierarchy. The goal at this stage wasn't to look good, it was to test whether the <em>structure</em> of the experience matched what grief actually needs. Several of these wireframes directly shaped, or got cut from, the final design.</p>
+
+            <div class="wireframe-grid">
+                <figure>
+                    <img src="images/griefcompanion-wf-welcome.png" alt="Low-fidelity wireframe of the welcome screen with two entry actions">
+                    <figcaption>01 — Welcome</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/griefcompanion-wf-chat.png" alt="Low-fidelity wireframe of the AI chat screen with quick-reply chips">
+                    <figcaption>02 — Chat</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/griefcompanion-wf-dashboard.png" alt="Low-fidelity wireframe of a dashboard with mood and activity charts">
+                    <figcaption>03 — Dashboard (cut)</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/griefcompanion-wf-journaling.png" alt="Low-fidelity wireframe of the journal entry screen">
+                    <figcaption>04 — Journaling</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/griefcompanion-wf-memoryvault.png" alt="Low-fidelity wireframe of the memory vault grid">
+                    <figcaption>05 — Memory Vault</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/griefcompanion-wf-suggested-activities.png" alt="Low-fidelity wireframe of a categorized coping strategies list">
+                    <figcaption>06 — Coping Strategies (reworked)</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/griefcompanion-wf-activity-detail.png" alt="Low-fidelity wireframe of a generic activity detail template">
+                    <figcaption>07 — Activity Detail (cut)</figcaption>
+                </figure>
+            </div>
+
+            <h3>What These Wireframes Exposed</h3>
+            <ul class="key-findings">
+                <li><strong>The dashboard didn't survive contact with the problem:</strong> Wireframe 03 tracked "emotional variance" and logged meditation minutes like a fitness app. Once I sat with the grief counselors' feedback, this felt wrong — graphing someone's grief implies it's a metric to optimize, which directly contradicts the core insight that "not all problems need solving." I cut it before it ever reached high fidelity.</li>
+                <li><strong>The chat flow's quick-reply pattern held up:</strong> Wireframe 02 tested giving the user pre-written response chips ("Talk about it," "Just sit in silence") so the first interaction never faced an intimidating blank text box. This held through to the final design, just with warmer copy and softer visual styling.</li>
+                <li><strong>Coping strategies as a browsable directory felt clinical:</strong> Wireframes 06 and 07 treated coping tools like a checklist app — categories, list items, a generic "Activity Title" template. It read like a wellness app, not a companion. In the final product this collapsed into contextual, conversation-driven suggestions instead of a standalone directory the user has to browse.</li>
+                <li><strong>Memory Vault's structure was right early:</strong> The grid-of-memories layout in wireframe 05 tested well from the start. The main change by final design was dropping the prominent search bar — with realistically small memory counts, people scrolled instead of searching.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
             <h2>Design Solution: Always-Available Compassionate AI</h2>
 
             <p>The core insight that shaped every design decision: <strong>Grief support must be available when grief strikes, not when appointments are scheduled.</strong> The AI companion needed to feel human-like in empathy but transparent about being AI.</p>
@@ -439,5 +485,16 @@
             <p>bantezana1@gmail.com &nbsp;·&nbsp; <a href="https://www.linkedin.com/in/brandon-a-775408137">LinkedIn</a></p>
         </div>
     </footer>
+
+    <button class="back-to-top" aria-label="Back to top">↑</button>
+    <script>
+        const backToTop = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            backToTop.classList.toggle('is-visible', window.scrollY > 600);
+        });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 </body>
 </html>
