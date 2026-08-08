@@ -108,7 +108,8 @@ nav {
 
 /* Work section */
 #work {
-    padding: 2rem 0 7rem;
+    padding-top: 2rem;
+    padding-bottom: 7rem;
 }
 
 .section-label {
