@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Civic | Brandon Antezana</title>
+    <meta name="description" content="Case study: Civic, a platform that makes local government information accessible and actionable for everyday residents. 73% increase in engagement, WCAG 2.1 AA compliant.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231f3a5f'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='34' fill='%23f5f1e8' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E">
     <link rel="stylesheet" href="style-case-study.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body style="--accent: #1f3a5f;">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <nav>
         <div class="container">
             <div class="nav-content">
@@ -24,6 +27,7 @@
         </div>
     </nav>
 
+    <main id="main-content">
     <div class="case-study-hero">
         <div class="container">
             <span class="eyebrow">Case Study 02</span>
@@ -190,7 +194,7 @@
             <p>One of the most powerful features emerged from user research: residents felt intimidated and excluded by bureaucratic language. The "Plain English" toggle was born from this insight.</p>
 
             <div class="showcase">
-                <h4>Project Detail with Plain English</h4>
+                <h3>Project Detail with Plain English</h3>
                 <div class="showcase-grid">
                     <div>
                         <img src="images/Civicscreen6.png" alt="Project detail page showing plain English toggle and key information">
@@ -231,7 +235,7 @@
             <p>Research showed that 78% of users would engage with local government from their phones, but existing sites were desktop-only or had broken mobile experiences. I designed mobile-first flows for the three most common civic actions.</p>
 
             <div class="showcase">
-                <h4>Mobile User Flows</h4>
+                <h3>Mobile User Flows</h3>
                 <div class="showcase-grid">
                     <div>
                         <img src="images/CivicMobilescreen3.png" alt="Mobile screen showing issue reporting with map location picker">
@@ -262,7 +266,7 @@
             </div>
 
             <div class="design-decision">
-                <h4>Why Multi-Step vs Single Form</h4>
+                <h3>Why Multi-Step vs Single Form</h3>
                 <p>Testing showed that long single page forms had 67% abandonment rate on mobile. Breaking the flow into focused steps:</p>
                 <div class="before-after">
                     <div>
@@ -323,6 +327,7 @@
             </ul>
         </section>
     </div>
+    </main>
 
     <footer>
         <div class="container">
@@ -338,7 +343,8 @@
             backToTop.classList.toggle('is-visible', window.scrollY > 600);
         });
         backToTop.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
         });
     </script>
 </body>
