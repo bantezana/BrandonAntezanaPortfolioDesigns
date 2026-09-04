@@ -108,6 +108,62 @@ nav {
     line-height: 1.65;
 }
 
+/* About hero: text + portrait, two static columns */
+.page-hero-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 4.5rem;
+    align-items: center;
+}
+
+.about-portrait {
+    margin: 0;
+}
+
+.about-portrait img {
+    width: 100%;
+    max-width: 380px;
+    display: block;
+    margin-left: auto;
+    border-radius: 12px;
+    border: 1px solid var(--line);
+    box-shadow: 0 18px 40px -24px rgba(28, 26, 22, 0.35);
+}
+
+/* Rotating job title in the About headline.
+   Each headline segment is its own line; the rotating title owns the
+   middle line entirely, so width changes never reflow the sentence. */
+.about-headline .line {
+    display: block;
+}
+
+.rotator {
+    overflow: hidden;
+    white-space: nowrap;
+    /* room for descenders (j, g) so they don't get clipped */
+    padding-bottom: 0.12em;
+    margin-bottom: -0.12em;
+}
+
+.rotator-word {
+    display: inline-block;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--accent);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.rotator-word.is-leaving {
+    opacity: 0;
+    transform: translateY(0.6em);
+}
+
+.rotator-word.is-entering {
+    opacity: 0;
+    transform: translateY(-0.6em);
+    transition: none;
+}
+
 /* About page */
 .about-body {
     padding: 4rem 0 5rem;
@@ -234,6 +290,46 @@ nav {
 
 .about-sidebar .cta-link:hover {
     text-decoration: underline;
+}
+
+/* Skills & Tools section (About) */
+.skills-body {
+    padding: 4rem 0 6rem;
+    border-top: 1px solid var(--line);
+}
+
+.skills-body h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 1.75rem;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+}
+
+.skills-intro {
+    color: var(--muted);
+    font-size: 1.0625rem;
+    max-width: 56ch;
+    margin-bottom: 2.5rem;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem 3.5rem;
+}
+
+.skill-group h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    margin-bottom: 1rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--line);
 }
 
 /* Contact page */
@@ -649,6 +745,21 @@ footer a {
 
     .about-sidebar {
         position: static;
+    }
+
+    .page-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .about-portrait img {
+        margin-left: 0;
+        max-width: 240px;
     }
 
     .nav-links {
